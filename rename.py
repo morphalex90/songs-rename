@@ -8,7 +8,7 @@ def rename_mp3_files(location):
                 old_filepath = os.path.join(root, m_file)
                 id3info = eyed3.load(old_filepath)
 
-                new_filename = '{}.mp3'.format(id3info.tag.artist.replace("/", ", ") + ' - ' +  id3info.tag.title)
+                new_filename = '{}.mp3'.format(id3info.tag.artist.replace("/", ", ") + ' - ' +  id3info.tag.title.replace("/", ", "))
                 new_filepath = os.path.join(root, new_filename)
 
                 os.rename(old_filepath, new_filepath)
